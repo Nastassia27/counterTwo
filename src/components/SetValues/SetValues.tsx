@@ -12,14 +12,20 @@ type SetValuesType = {
 
 }
 const SetValues = (props: SetValuesType) => {
+
+    const [disabledSetValues, setDisabledSetValuesButton] = React.useState(false);
+
     const onChangeMaxValueHandler = (number: number) => {
         props.changeMaxValue(number)
+        setDisabledSetValuesButton(false)
     }
     const onChangeStartValueHandler = (number: number) => {
         props.changeStartValue(number)
+        setDisabledSetValuesButton(false)
     }
     const setNumbersHandler = () => {
         props.setNumbers()
+        setDisabledSetValuesButton(true)
     }
 
     return (
@@ -33,7 +39,10 @@ const SetValues = (props: SetValuesType) => {
                 <Input value={props.startValue} onChange={onChangeStartValueHandler} type={'number'}/>
             </div>
             <div>
-                <Button title={'set'} onClick={setNumbersHandler}/>
+                <Button title={'set'}
+                        onClick={setNumbersHandler}
+                        /*className={disabledSetValues ? '' : ''}*/
+                        disabled={disabledSetValues}/>
             </div>
         </div>
     )

@@ -2,6 +2,7 @@ type ButtonPropsType = {
     title: string;
     onClick: () => void;
     className?: string;
+    disabled?: boolean;
 }
 
 const Button = (props: ButtonPropsType) => {
@@ -10,7 +11,7 @@ const Button = (props: ButtonPropsType) => {
     }
 
     return (
-        <button className={props.className} onClick={onClickHandler}>{props.title}</button>
+        <button disabled={props.disabled} className={props.className} onClick={onClickHandler}>{props.title}</button>
     )
 }
 
