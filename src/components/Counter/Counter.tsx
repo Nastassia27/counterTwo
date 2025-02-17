@@ -1,6 +1,6 @@
 import React from 'react';
-import Input from "../Input/Input";
-import Button from "../Button/Button";
+import SetValues from "../SetValues/SetValues";
+import ShowResults from "../ShowResults/ShowResults";
 
 
 const Counter = () => {
@@ -30,26 +30,14 @@ const Counter = () => {
     }
     return (
         <div className="App">
-            <div className='set-numbers'>
-                <div>
-                    Max value:
-                    <Input value={maxValue} onChange={()=>onChangeMaxValueHandler} type={'number'}/>
-                </div>
-                <div>
-                    Start value:
-                    <Input value={startValue} onChange={()=>onChangeStartValueHandler} type={'number'}/>
-                </div>
-                <div>
-                    <Button title={'set'} onClick={setNumbersHandler}/>
-                </div>
-            </div>
-            <div className='show-results'>
-                <div>{resultValue}</div>
-                <>
-                    <Button title={'inc'} onClick={increaseValueHandler}/>
-                    <Button title={'reset'} onClick={resetValueHandler}/>
-                </>
-            </div>
+            <SetValues maxValue={maxValue}
+                       startValue={startValue}
+                       changeMaxValue={onChangeMaxValueHandler}
+                       changeStartValue={onChangeStartValueHandler}
+                       setNumbers={setNumbersHandler}
+
+            />
+        <ShowResults resultValue={resultValue} increaseValue={increaseValueHandler} resetValue={resetValueHandler} />
         </div>
     );
 }

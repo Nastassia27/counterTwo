@@ -5,18 +5,18 @@ import React from "react";
 type SetValuesType = {
     maxValue: number
     startValue: number
-    changeMaxValue: () => void
-    changeStartValue: () => void
+    changeMaxValue: (number: number) => void
+    changeStartValue: (number: number) => void
     setNumbers: () => void
 
 
 }
 const SetValues = (props: SetValuesType) => {
-    const onChangeMaxValueHandler = () => {
-        props.changeMaxValue()
+    const onChangeMaxValueHandler = (number: number) => {
+        props.changeMaxValue(number)
     }
-    const onChangeStartValueHandler = () => {
-        props.changeStartValue()
+    const onChangeStartValueHandler = (number: number) => {
+        props.changeStartValue(number)
     }
     const setNumbersHandler = () => {
         props.setNumbers()

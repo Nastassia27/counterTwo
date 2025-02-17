@@ -2,7 +2,7 @@ import {ChangeEvent} from "react";
 
 type InputPropsType = {
     value: string | number;
-    onChange: (e: string | number) => void;
+    onChange: (e: number) => void;
     className?: string;
     type: string;
     max?: number;
@@ -11,7 +11,7 @@ type InputPropsType = {
 
 const Input = (props: InputPropsType ) => {
     const onChangeHandler=(e: ChangeEvent<HTMLInputElement>) => {
-        let value = e.currentTarget.value;
+        let value = e.currentTarget.valueAsNumber;
         props.onChange(value);
     }
 
