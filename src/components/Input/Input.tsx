@@ -1,8 +1,8 @@
 import {ChangeEvent} from "react";
 
 type InputPropsType = {
-    value: string;
-    onChange: (e: string) => void;
+    value: string | number;
+    onChange: (e: string | number) => void;
     className?: string;
     type: string;
     max?: number;
