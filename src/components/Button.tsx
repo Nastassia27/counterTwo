@@ -4,7 +4,7 @@ type ButtonPropsType = {
     className?: string;
 }
 
-const Botton = (props: ButtonPropsType) => {
+const Button = (props: ButtonPropsType) => {
     const onClickHandler=() => {
         props.onClick();
     }
@@ -14,4 +14,4 @@ const Botton = (props: ButtonPropsType) => {
     )
 }
 
-export default Botton
+export default Button
