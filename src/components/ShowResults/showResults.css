@@ -4,18 +4,30 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: space-between;
-    gap: 15px;
+    justify-content: center;
+    gap: 5px;
     padding: 20px;
     border-radius: 8px;
     width: 250px; /* Ensures both have the same width */
     min-height: 180px; /* Ensures both have the same height */
     flex-grow: 1;
+    border: 2px solid gray;
 }
 
-/* Result value styling */
-.show-results div:first-child {
+.show-results > div:first-child {
     font-size: 24px;
     font-weight: bold;
+    text-align: center;
     color: #333;
+    margin-bottom: 10px; /* Reduce bottom margin */
 }
+
+/* Buttons container */
+.show-results > div:last-child {
+    display: flex;
+    justify-content: center;
+    gap: 10px; /* Space between buttons */
+    width: 100%; /* Ensures buttons stay centered */
+}
+
+

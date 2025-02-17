@@ -22,10 +22,10 @@ const ShowResults = (props:ShowResultsProps) => {
         return (
         <div className='show-results'>
             <div>{props.resultValue}</div>
-            <>
+            <div>
                 <Button title={'inc'} onClick={increaseValueHandler} disabled={props.resultValue>=props.maxValue}/>
                 <Button title={'reset'} onClick={resetValueHandler}/>
-            </>
+            </div>
         </div>
     )
 }
