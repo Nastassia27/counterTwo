@@ -1,5 +1,6 @@
 import Button from "../Button/Button";
 import React from "react";
+import './showResults.css'
 
 type ShowResultsProps = {
     resultValue: number;

@@ -1,6 +1,7 @@
 import React from 'react';
 import SetValues from "../SetValues/SetValues";
 import ShowResults from "../ShowResults/ShowResults";
+import './counter.css';
 
 
 const Counter = () => {
@@ -35,7 +36,7 @@ const Counter = () => {
         setResultValue(startValue)
     }
     return (
-        <div className="App">
+        <div className="container">
             <SetValues maxValue={maxValue}
                        startValue={startValue}
                        changeMaxValue={onChangeMaxValueHandler}

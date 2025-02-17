@@ -1,6 +1,7 @@
 import Input from "../Input/Input";
 import Button from "../Button/Button";
 import React from "react";
+import './setValues.css'
 
 type SetValuesType = {
     maxValue: number
