@@ -5,6 +5,7 @@ type ShowResultsProps = {
     resultValue: number;
     increaseValue:() => void;
     resetValue:() => void;
+    maxValue:number;
 }
 
 const ShowResults = (props:ShowResultsProps) => {
@@ -21,7 +22,7 @@ const ShowResults = (props:ShowResultsProps) => {
         <div className='show-results'>
             <div>{props.resultValue}</div>
             <>
-                <Button title={'inc'} onClick={increaseValueHandler}/>
+                <Button title={'inc'} onClick={increaseValueHandler} disabled={props.resultValue>=props.maxValue}/>
                 <Button title={'reset'} onClick={resetValueHandler}/>
             </>
         </div>

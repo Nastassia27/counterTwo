@@ -10,6 +10,7 @@ const Counter = () => {
 
     const [disableButtons, setDisabledButton] = React.useState(false);
 
+
     const onChangeMaxValueHandler = (number: number) => {
         setMaxValue(number);
         setDisabledButton(false)
@@ -43,7 +44,11 @@ const Counter = () => {
                        disabled={disableButtons}
 
             />
-        <ShowResults resultValue={resultValue} increaseValue={increaseValueHandler} resetValue={resetValueHandler} />
+        <ShowResults resultValue={resultValue}
+                     increaseValue={increaseValueHandler}
+                     resetValue={resetValueHandler}
+                     maxValue={maxValue}
+        />
         </div>
     );
 }
