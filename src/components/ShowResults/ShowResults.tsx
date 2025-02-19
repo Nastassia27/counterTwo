@@ -21,8 +21,8 @@ const ShowResults = (props:ShowResultsProps) => {
 
         return (
         <div className='show-results'>
-            <div>{props.resultValue}</div>
-            <div>
+            <div className={props.resultValue===props.maxValue ?'show-results-max': 'show-results-numbers'}>{props.resultValue}</div>
+            <div className={'show-results-buttons'}>
                 <Button title={'inc'} onClick={increaseValueHandler} disabled={props.resultValue>=props.maxValue}/>
                 <Button title={'reset'} onClick={resetValueHandler}/>
             </div>

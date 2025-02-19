@@ -14,7 +14,7 @@
     border: 2px solid gray;
 }
 
-.show-results > div:first-child {
+.show-results-numbers {
     font-size: 24px;
     font-weight: bold;
     text-align: center;
@@ -23,11 +23,19 @@
 }
 
 /* Buttons container */
-.show-results > div:last-child {
+.show-results-buttons {
     display: flex;
     justify-content: center;
     gap: 10px; /* Space between buttons */
     width: 100%; /* Ensures buttons stay centered */
 }
 
+.show-results-max {
+    font-size: 24px;
+    font-weight: bold;
+    text-align: center;
+    color: #333;
+    margin-bottom: 10px; /* Reduce bottom margin */
+    color: red;
+}
 
