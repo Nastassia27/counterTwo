@@ -29,16 +29,15 @@ const SetValues = (props: SetValuesType) => {
         <div className='set-numbers'>
             <div>
                 Max value:
-                <Input value={props.maxValue} onChange={onChangeMaxValueHandler} type={'number'}/>
+                <Input className={props.maxValue<0 || props.maxValue <= props.startValue? 'set-numbers-error-input' :'set-numbers-input'} value={props.maxValue} onChange={onChangeMaxValueHandler} type={'number'}/>
             </div>
             <div>
                 Start value:
-                <Input value={props.startValue} onChange={onChangeStartValueHandler} type={'number'}/>
+                <Input className={props.startValue<0 || props.maxValue <= props.startValue ? 'set-numbers-error-input' :'set-numbers-input'} value={props.startValue} onChange={onChangeStartValueHandler} type={'number'}/>
             </div>
             <div>
                 <Button title={'set'}
                         onClick={setNumbersHandler}
-                        /*className={disabledSetValues ? '' : ''}*/
                         disabled={props.disabled}/>
             </div>
         </div>

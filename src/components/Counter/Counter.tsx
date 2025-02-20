@@ -8,6 +8,7 @@ const Counter = () => {
     const [startValue, setStartValue] = React.useState<number>(0);
     const [maxValue, setMaxValue] = React.useState<number>(0);
     const [resultValue, setResultValue] = React.useState<number>(0);
+    const [text, setText] = React.useState<string>('Enter values and press \'set\' ');
 
     const [disableButtons, setDisabledButton] = React.useState(false);
 
@@ -49,6 +50,8 @@ const Counter = () => {
                      increaseValue={increaseValueHandler}
                      resetValue={resetValueHandler}
                      maxValue={maxValue}
+                     startValue={startValue}
+                     text={text}
         />
         </div>
     );

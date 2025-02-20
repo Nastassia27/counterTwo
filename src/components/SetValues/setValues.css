@@ -16,12 +16,20 @@
 }
 
 /* Input styles */
-.set-numbers input {
+.set-numbers-input {
     padding: 8px;
     border: 1px solid #ccc;
     border-radius: 5px;
     text-align: center;
     font-size: 16px;
+}
+.set-numbers-error-input {
+    padding: 8px;
+    border: 1px solid red !important;
+    border-radius: 5px;
+    text-align: center;
+    font-size: 16px;
+    color: red;
 }
 
 /* Button styling */
