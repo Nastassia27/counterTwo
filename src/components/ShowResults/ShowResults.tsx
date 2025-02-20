@@ -21,7 +21,7 @@ const ShowResults = (props: ShowResultsProps) => {
         props.resetValue()
     }
     const showText = () => {
-        if (props.startValue < 0 || props.maxValue < 0 || props.startValue >props.maxValue) {
+        if (props.startValue < 0 || props.maxValue < 0 || (props.startValue >=props.maxValue && props.isClicked)) {
             return <p style={{color: 'red'}}>Incorrect value!</p>
         } else if(!props.isClicked){
             return 'Enter values and press \'set\''
