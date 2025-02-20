@@ -6,9 +6,9 @@ type ShowResultsProps = {
     resultValue: number;
     increaseValue: () => void;
     resetValue: () => void;
-    maxValue: number;
-    text: string;
-    startValue: number
+    maxValueFix: number;
+    startValueFix: number
+    isClicked: boolean
 }
 
 const ShowResults = (props: ShowResultsProps) => {
@@ -21,8 +21,10 @@ const ShowResults = (props: ShowResultsProps) => {
         props.resetValue()
     }
     const showText = () => {
-        if(props.startValue<0 || props.maxValue<0 || props.startValue>=props.maxValue){
-            return <p style={{ color: 'red' }}>Incorrect value!</p>
+        if (props.startValueFix < 0 || props.maxValueFix < 0 || props.startValueFix > props.maxValueFix) {
+            return <p style={{color: 'red'}}>Incorrect value!</p>
+        } else if(!props.isClicked){
+            return 'Enter values and press \'set\''
         } else{
             return props.resultValue
         }
@@ -30,11 +32,11 @@ const ShowResults = (props: ShowResultsProps) => {
 
     return (
         <div className='show-results'>
-            <div className={props.resultValue === props.maxValue ? 'show-results-max' : 'show-results-numbers'}>
+            <div className={props.resultValue === props.maxValueFix ? 'show-results-max' : 'show-results-numbers'}>
                 {showText()}
             </div>
             <div className={'show-results-buttons'}>
-                <Button title={'inc'} onClick={increaseValueHandler} disabled={props.resultValue >= props.maxValue}/>
+                <Button title={'inc'} onClick={increaseValueHandler} disabled={props.resultValue >= props.maxValueFix}/>
                 <Button title={'reset'} onClick={resetValueHandler}/>
             </div>
         </div>

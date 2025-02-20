@@ -6,27 +6,36 @@ import './counter.css';
 
 const Counter = () => {
     const [startValue, setStartValue] = React.useState<number>(0);
-    const [maxValue, setMaxValue] = React.useState<number>(0);
-    const [resultValue, setResultValue] = React.useState<number>(0);
-    const [text, setText] = React.useState<string>('Enter values and press \'set\' ');
+    const [startValueFix, setStartValueFix] = React.useState<number>(0);
 
-    const [disableButtons, setDisabledButton] = React.useState(false);
+    const [maxValue, setMaxValue] = React.useState<number>(0);
+    const [maxValueFix, setMaxValueFix] = React.useState<number>(0);
+
+    const [resultValue, setResultValue] = React.useState<number>(1);
+
+    const [isClicked, setIsClicked]= React.useState<boolean>(false);
+    //const [disableButtons, setDisabledButton] = React.useState(false);
 
 
     const onChangeMaxValueHandler = (number: number) => {
         setMaxValue(number);
-        setDisabledButton(false)
+        setIsClicked(false)
+        //setDisabledButton(false)
     }
 
     const onChangeStartValueHandler = (number: number) => {
         setStartValue(number);
-        setDisabledButton(false)
+        setIsClicked(false)
+        //setDisabledButton(false)
     }
     const setNumbersHandler = () => {
-        setMaxValue(maxValue);
-        setStartValue(startValue);
+        setStartValueFix(startValue)
+        setMaxValueFix(maxValue)
+        /*setMaxValue(maxValue);
+        setStartValue(startValue);*/
         setResultValue(startValue);
-        setDisabledButton(true)
+        setIsClicked(true)
+       // setDisabledButton(true)
     }
     const increaseValueHandler = () => {
         const newValue= resultValue+1
@@ -34,7 +43,7 @@ const Counter = () => {
     }
 
     const resetValueHandler = () => {
-        setResultValue(startValue)
+        setResultValue(startValueFix)
     }
     return (
         <div className="container">
@@ -43,15 +52,16 @@ const Counter = () => {
                        changeMaxValue={onChangeMaxValueHandler}
                        changeStartValue={onChangeStartValueHandler}
                        setNumbers={setNumbersHandler}
-                       disabled={disableButtons}
+                       isClicked={isClicked}
+                    //   disabled={disableButtons}
 
             />
         <ShowResults resultValue={resultValue}
                      increaseValue={increaseValueHandler}
                      resetValue={resetValueHandler}
-                     maxValue={maxValue}
-                     startValue={startValue}
-                     text={text}
+                     maxValueFix={maxValueFix}
+                     startValueFix={startValueFix}
+                     isClicked={isClicked}
         />
         </div>
     );
